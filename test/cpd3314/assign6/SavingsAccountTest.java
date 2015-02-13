@@ -132,7 +132,7 @@ public class SavingsAccountTest {
     public void testGetTotalInterest() {
         System.out.println("getTotalInterest");
         SavingsAccount instance = new SavingsAccount(0.08, 500);
-        double expResult = 6.68888;
+        double expResult = 6.6666;
         instance.calculateInterest();
         instance.calculateInterest();
         double result = instance.getTotalInterest();
