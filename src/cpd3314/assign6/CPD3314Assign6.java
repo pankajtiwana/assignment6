@@ -34,7 +34,27 @@ public class CPD3314Assign6 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Scanner in =new Scanner(System.in);
+        System.out.println("enter your choice to run exercise:");
+       
+        System.out.println("1.Exercise 2\n 2.Exercice 7\n 3.Exercise 10\n 4.Exercise 11");
+         int ch=in.nextInt();
+        switch(ch)
+        {
+            case 1:
+                doExercise2();
+                break;
+            case 2:
+                doExercise7();
+                break;
+            case 3:
+                doExercise10();
+                break;
+            case 4:
+                doExercise11();
+                break;
+        }
         // TODO: This is a sandbox. 
 
         /* Modify it and use it to call whatever objects and methods you want.
@@ -70,9 +90,22 @@ public class CPD3314Assign6 {
      * brake method, get the current speed of the car and display it.
      * - Gaddis pg. 400-1
      */
-    public void doExercise2() {
+    public static  void doExercise2() {
+        
         // TODO: Complete the main-class portion of Exercise #2 here
+    Car c=new Car();
+    for(int i=1;i<=5; i++)
+    {
+        System.out.println("the Car speed "+i+"st time is"+c.accelerate());
     }
+      for(int i=1;i<=5; i++)
+    {
+        System.out.println("the Car speed "+i+"st time after braking is"+c.brake());
+    }
+    
+    
+    }
+    
 
     /* Exercise #7 - Circle Class
      *
@@ -96,7 +129,18 @@ public class CPD3314Assign6 {
      * then reporting the circle's area, diameter, and circumference.
      * - Gaddis pg- 402
      */
-    public void doExercise7() {
+    public static void doExercise7() {
+        Scanner in =new Scanner(System.in);
+        System.out.println("enter the radius of the circle");
+        double r=in.nextDouble();
+        Circle c=new Circle();
+        c.setRadius(r);
+        System.out.println("the circle's area is "+c.getArea());
+        System.out.println("the circle's area is "+c.getDiameter());
+        System.out.println("the circle's area is "+c.getCircumference());
+        
+              
+
         // TODO: Complete the main-class portion of Exercise #7 here
     }
 
@@ -117,7 +161,7 @@ public class CPD3314Assign6 {
      * are on the right track.
      * - Gaddis pg- 403-4
      */
-    public void doExercise10() {
+    public static void doExercise10() {
         Scanner kb = new Scanner(System.in);
         System.out.println("What is the annual interest rate? (eg- 0.013)");
         double annualRate = kb.nextDouble();
@@ -144,7 +188,7 @@ public class CPD3314Assign6 {
         System.out.printf("Total Interst: %.2f\n", sa.getTotalInterest());
     }
 
-    public void doExercise11() throws IOException {
+    public static void doExercise11() throws IOException {
         File dFile = new File("Deposits.txt");
         Scanner deposits = new Scanner(dFile);
         File wFile = new File("Withdrawals.txt");
@@ -153,10 +197,13 @@ public class CPD3314Assign6 {
         SavingsAccount sa = new SavingsAccount(0.08, 500.00);
 
         while (deposits.hasNext()) {
-            sa.deposit(deposits.nextDouble());
+            //sa.deposit(deposits.nextDouble());
+            System.out.println(deposits.nextDouble());
         }
         while (withdrawals.hasNext()) {
-            sa.withdraw(withdrawals.nextDouble());
+           // sa.withdraw(withdrawals.nextDouble());
+            System.out.println(withdrawals.nextDouble());
+            
         }
         sa.calculateInterest();
         System.out.printf("Ending Balance: %.2f\n", sa.getBalance());

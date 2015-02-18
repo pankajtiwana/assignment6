@@ -51,5 +51,48 @@ package cpd3314.assign6;
  * @author <ENTER YOUR NAME HERE>
  */
 public class Car {
+    int yearModel;
+    String make=new String();
+    int speed;
+    
+    public Car()
+    {
+        this.speed=0;
+    }
+    public Car(int mod, String mk)
+    {
+        yearModel=mod;
+        make=mk;
+        speed=0;
+    }
+    
+    public int getYearModel()
+    {
+       
+                
+                return this.yearModel;
+    }
+    
+    public String getMake()
+    {
+        
+        return make;
+    }
+    
+    public int getSpeed()
+    {
+        
+        return speed;
+    }
+    public int accelerate()
+            
+    {
+        return speed=speed+5;
+    }
+    public int brake()
+    {
+        return speed=speed-5;
+    }
+    }
     // TODO: Build the Car Class Here
-}
+

@@ -49,5 +49,43 @@ package cpd3314.assign6;
  * @author <ENTER YOUR NAME HERE>
  */
 public class Circle {
+    double radius;
+    final double PI= 3.14159;
+    
+    public Circle()
+    {
+        this.radius=0.0;
+    }
+    public Circle(double radius)
+    {
+        this.radius=radius;
+    }
+    public void setRadius(double r)
+    {
+        this.radius=r;
+        
+    }
+    public double getRadius()
+    {
+        return this.radius;
+    }
+    public double getArea()
+    {
+        double area;
+        area=this.PI*this.radius*this.radius;
+        return area;
+    }
+    public double getDiameter()
+    {
+        double diameter;
+        diameter=this.radius*2;
+        return diameter;
+    }
+    public double getCircumference()
+    {
+        double cir;
+        cir=2*this.PI*this.radius;
+        return cir;
+    }
     // TODO: Build the Circle Class here
 }
